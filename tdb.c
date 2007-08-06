@@ -150,6 +150,16 @@ static PHP_FUNCTION(tdb_open)
 		return;
 	}
 
+#if PHP_MAJOR_VERSION < 6
+	if (file_len && PG(safe_mode) && (!php_checkuid(file, NULL, CHECKUID_CHECK_FILE_AND_DIR))) {
+		RETURN_FALSE;
+	}
+#endif
+
+	if (php_check_open_basedir(file TSRMLS_CC)) {
+		RETURN_FALSE;
+	}
+
 	if ((int)hash_size < 0) {
 		php_error_docref(NULL TSRMLS_CC, E_WARNING, "The integer value of hash_size cannot be less than zero");
 		RETURN_FALSE;
