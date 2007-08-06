@@ -40,6 +40,10 @@ if test "$PHP_TDB" != "no"; then
     -L$TDB_DIR/lib -lm -ldl
   ])
 
+  if test "$enable_experimental_zts" = "yes"; then
+    AC_MSG_ERROR([Trivial DB is not thread safe])
+  fi
+
   AC_DEFINE(HAVE_TDB,1,[ ])
   PHP_SUBST(TDB_SHARED_LIBADD)
 
