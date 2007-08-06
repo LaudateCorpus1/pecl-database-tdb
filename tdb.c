@@ -67,6 +67,7 @@ static inline void php_tdb_errmsg(php_tdb_context_t *ctx TSRMLS_DC) /* {{{ */
 		php_error_docref(NULL TSRMLS_CC, E_WARNING, "%s", tdb_errorstr(ctx->tdb));
 	}
 }
+/* }}} */
 
 #define PHP_TDB_CONSTANT(name) \
 	REGISTER_LONG_CONSTANT( #name, name, CONST_CS | CONST_PERSISTENT)
@@ -787,7 +788,7 @@ zend_module_entry tdb_module_entry = {
 	NULL,
 	PHP_MINFO(tdb),
 #if ZEND_MODULE_API_NO >= 20010901
-	"0.1",
+	"0.1.0",
 #endif
 	STANDARD_MODULE_PROPERTIES
 };
