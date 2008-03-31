@@ -128,6 +128,7 @@ PHP_MINFO_FUNCTION(tdb)
 {
 	php_info_print_table_start();
 	php_info_print_table_header(2, "Trivial DB support", "enabled");
+	php_info_print_table_row(2, "Extension version", PHP_TDB_VERSION);
 	php_info_print_table_end();
 }
 /* }}} */
@@ -798,7 +799,7 @@ zend_module_entry tdb_module_entry = {
 	NULL,
 	PHP_MINFO(tdb),
 #if ZEND_MODULE_API_NO >= 20010901
-	"0.1.0",
+	PHP_TDB_VERSION,
 #endif
 	STANDARD_MODULE_PROPERTIES
 };

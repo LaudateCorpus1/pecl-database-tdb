@@ -24,6 +24,8 @@
 extern zend_module_entry tdb_module_entry;
 #define phpext_tdb_ptr &tdb_module_entry
 
+#define PHP_TDB_VERSION "0.2.0-dev"
+
 #ifdef PHP_WIN32
 #define PHP_TDB_API __declspec(dllexport)
 #else
