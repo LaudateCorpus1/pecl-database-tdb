@@ -27,6 +27,27 @@ if test "$PHP_TDB" != "no"; then
   
   AC_MSG_RESULT([found])
 
+  dnl check if the headers contain definitions of required constants
+  old_CFLAGS=$CFLAGS
+  CFLAGS="-I$TDB_DIR/include"
+  AC_CACHE_CHECK(for TDB_NOSYNC and TDB_SEQNUM presence, ac_cv_new_tdb,
+    AC_TRY_COMPILE([
+#include <stdlib.h>
+#include <tdb.h>
+    ],[
+      int a = TDB_NOSYNC;
+      int b = TDB_SEQNUM;
+    ],[
+      ac_cv_new_tdb=yes
+    ],[
+      ac_cv_new_tdb=no
+    ])
+  )
+  if test "$ac_cv_new_tdb" = "no"; then
+    AC_MSG_ERROR([You seem to be using outdated version of TDB, which is not supported. See README for more info.])
+  fi
+  CFLAGS=$old_CFLAGS
+
   PHP_ADD_INCLUDE($TDB_DIR/include)
 
   LIBNAME=tdb
