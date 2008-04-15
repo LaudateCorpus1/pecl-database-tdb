@@ -24,6 +24,8 @@ if test "$PHP_TDB" != "no"; then
     AC_MSG_RESULT([not found])
     AC_MSG_ERROR([Could not find Trivial DB headers])
   fi
+  
+  AC_MSG_RESULT([found])
 
   PHP_ADD_INCLUDE($TDB_DIR/include)
 
@@ -37,7 +39,7 @@ if test "$PHP_TDB" != "no"; then
   ],[
     AC_MSG_ERROR([wrong Trivial DB lib version or lib not found])
   ],[
-    -L$TDB_DIR/lib -lm -ldl
+    -L$TDB_DIR/lib -lm
   ])
 
   if test "$enable_experimental_zts" = "yes"; then
