@@ -7,7 +7,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <channel>pecl.php.net</channel>
  <summary>Trivial DB bindings</summary>
  <description>
-  This extension provides bindings to Trivial DB.
+  This extension provides bindings for Trivial DB.
  </description>
  <lead>
   <name>Antony Dovgal</name>
