@@ -15,11 +15,11 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>tony2001@php.net</email>
   <active>yes</active>
  </lead>
- <date>2008-04-16</date>
- <time>19:00:00</time>
+ <date>2008-04-18</date>
+ <time>12:00:00</time>
  <version>
-  <release>0.2.0</release>
-  <api>0.2.0</api>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -28,6 +28,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <license uri="http://www.php.net/license">PHP</license>
  <notes>
   - Fixed PECL bug #13684 (tdb fails to configure on FreeBSD)
+  - Improved configure checks in order to detect wrong TDB version.
  </notes>
  <contents>
   <dir name="/">
