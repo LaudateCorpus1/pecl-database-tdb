@@ -129,6 +129,7 @@ PHP_MINFO_FUNCTION(tdb)
 	php_info_print_table_start();
 	php_info_print_table_header(2, "Trivial DB support", "enabled");
 	php_info_print_table_row(2, "Extension version", PHP_TDB_VERSION);
+	php_info_print_table_row(2, "Revision", "$Revision$");
 	php_info_print_table_end();
 }
 /* }}} */
